@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { applyMiddleware } from "redux";
+
 import "./TodoForm.css";
 
 export const TodoForm = ({ onCancel, onCreate }) => {
@@ -16,7 +16,7 @@ export const TodoForm = ({ onCancel, onCreate }) => {
       alert(" 할일을 입력해주세요.");
       return;
     }
-    // 액션함수를 통해 값 전달 
+    // 액션함수를 통해 값 전달
     onCreate(createTodo);
     setCreateTodo("");
   };

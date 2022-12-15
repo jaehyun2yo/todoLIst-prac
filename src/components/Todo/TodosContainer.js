@@ -1,7 +1,7 @@
 import React from "react";
 import { Todo } from "./Todo";
 import { useDispatch, useSelector } from "react-redux";
-import { checkedTodo, deleteTodo } from "../../redux/modules/todos";
+import { checkedTodo, deleteTodo, updateTodo } from "../../redux/modules/todos";
 
 // 리덕스 사용하는 로직
 const TodosContainer = () => {
@@ -11,12 +11,14 @@ const TodosContainer = () => {
   // state의 값은 store.getState() 함수를 호출했을 때 나타나는 결과물과 동일합니다.
   const todos = useSelector((state) => state.todos);
 
+  const onUpdateTodo = (id, content) => dispatch(updateTodo(id, content));
   const onDeleteTodo = (id) => dispatch(deleteTodo(id));
   const onCheckedTodo = (id) => dispatch(checkedTodo(id));
 
   return (
     <Todo
       todos={todos}
+      onUpdateTodo={onUpdateTodo}
       onDeleteTodo={onDeleteTodo}
       onCheckedTodo={onCheckedTodo}
     ></Todo>
