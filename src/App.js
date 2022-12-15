@@ -1,12 +1,17 @@
-import CreateTodoContainer from "./components/CreateTodo/CreateTodoContainer";
-import TodosContainer from "./components/Todo/TodosContainer";
+import { Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { NotFound } from "./pages/NotFound";
+import { TodoDetail } from "./pages/TodoDetail";
 
 function App() {
   return (
-    <div>
-      <CreateTodoContainer />
-      <TodosContainer></TodosContainer>
-    </div>
+    <>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/todo/:id" element={<TodoDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
