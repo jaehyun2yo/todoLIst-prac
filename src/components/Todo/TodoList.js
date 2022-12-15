@@ -2,20 +2,15 @@ import React from "react";
 import { TodoItem } from "./TodoItem";
 import "./TodoList.css";
 
-export const TodoList = (props) => {
-  
-
+export const TodoList = ({ filterTodoList, onDeleteTodo, onCheckedTodo }) => {
   return (
     <ul className="todo-list">
-      {props.filterTodoList.map((todo) => (
+      {filterTodoList.map((todo) => (
         <TodoItem
-          content={todo.content}
-          id={todo.id}
+          todo={todo}
           key={todo.id}
-          deleted={todo.deleted}
-          checked={todo.checked}
-          setTodos={props.setTodos}
-         
+          onDeleteTodo={onDeleteTodo}
+          onCheckedTodo={onCheckedTodo}
         />
       ))}
     </ul>

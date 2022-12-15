@@ -3,9 +3,8 @@ import { TodoList } from "./TodoList";
 import { Card } from "../UI/Card";
 import "./Todo.css";
 
-export const Todo = (props) => {
-
-  const filterTodoList = props.items.filter((todo) => {
+export const Todo = ({ todos, onDeleteTodo, onCheckedTodo }) => {
+  const filterTodoList = todos.filter((todo) => {
     return todo.deleted === false;
   });
 
@@ -14,8 +13,8 @@ export const Todo = (props) => {
       TODO List !
       <TodoList
         filterTodoList={filterTodoList}
-        setTodos={props.setTodos}
-  
+        onDeleteTodo={onDeleteTodo}
+        onCheckedTodo={onCheckedTodo}
       ></TodoList>
     </Card>
   );
