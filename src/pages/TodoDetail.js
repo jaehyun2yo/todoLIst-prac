@@ -25,9 +25,17 @@ export const TodoDetail = () => {
     <>
       <div className={classes.inner} onClick={goBack}></div>
       <Card className={classes["todo-modal"]}>
-        <div className="todo-item__desc">
+        <header className={classes.header}>
+          <h1>상세페이지</h1>
+        </header>
+        <div className={classes["todo-modal__desc"]}>
           <h2>{selectedTodo[0].content}</h2>
         </div>
+        <footer className={classes.actions}>
+          <button className={classes.button} onClick={goBack}>
+            확인
+          </button>
+        </footer>
       </Card>
     </>
   );

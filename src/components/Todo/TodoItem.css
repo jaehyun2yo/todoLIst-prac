@@ -4,7 +4,7 @@
   align-items: center;
   padding: 1.7rem;
   margin: 2rem 1rem;
-  background-color: #b3d3f9;
+  background-color: #aa721e;
   transition: all 0.5s;
 }
 .todo-item:hover {
@@ -45,14 +45,23 @@
 }
 
 .todo-item__button {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #3a3a3a;
-  background-color: #ffffff;
-  margin-left: 0.5rem;
+  font: inherit;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ffff;
+  background-color: #ffff;
+  color: #8a2b06;
   border-radius: 12px;
+  margin-right: 1rem;
+  font-size: 1rem;
+  z-index: 100;
+}
+
+.todo-item__button:hover,
+.todo-item__button:active {
+  background-color: #87442a;
+  border-color: #87442a;
+  color: #fff;
 }
 
 @media (min-width: 580px) {

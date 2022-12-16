@@ -10,85 +10,52 @@
 
 .todo-modal {
   position: fixed;
+  margin: 0 auto;
   top: 30vh;
-  left: 10%;
-  width: 80%;
-  height: 50%;
+  left: 25%;
+  width: 50%;
+  height: 40%;
   z-index: 100;
   overflow: hidden;
   background-color: white;
 }
-.todo-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.7rem;
-  margin: 2rem 1rem;
-  background-color: #b3d3f9;
-  transition: all 0.5s;
+.header {
+  background: #aa721e;
+  padding: 1rem;
 }
-.todo-item:hover {
-  cursor: pointer;
-  transform: translateY(-5px);
+.header h1 {
+  margin: 0;
+  color: white;
+  text-align: center;
 }
 
-.todo-item__desc {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-start;
-  flex-flow: column-reverse;
-  justify-content: space-between;
-  flex: 1;
+.todo-modal__desc {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 3rem;
+}
+.actions {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 1rem;
 }
 
-.todo-item__desc input {
+.actions .button {
   font: inherit;
-  padding: 0.5rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  width: 20rem;
-  max-width: 100%;
-}
-
-.todo-item h2 {
-  text-align: start;
-  font-size: 1.6rem;
-  flex: 1;
-  margin: 0 1rem;
-  color: #fff;
-}
-
-.todo-item h2.checked {
-  text-decoration: line-through;
-  text-decoration-thickness: 0.3rem;
-}
-
-.todo-item__button {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #3a3a3a;
-  background-color: #ffffff;
-  margin-left: 0.5rem;
+  border: 1px solid #aa721e;
+  background: #aa721e;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 12px;
 }
 
-@media (min-width: 580px) {
-  .expense-item__description {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    flex: 1;
-  }
+.button:hover,
+.button:active {
+  background: #74511d;
+  border-color: #74511d;
+}
 
-  .expense-item__description h2 {
-    font-size: 1.25rem;
-  }
-
-  .expense-item__price {
-    font-size: 1.25rem;
-    padding: 0.5rem 1.5rem;
-  }
+.button:focus {
+  outline: none;
 }

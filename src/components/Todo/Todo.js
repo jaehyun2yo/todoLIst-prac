@@ -10,7 +10,7 @@ export const Todo = ({ todos, onDeleteTodo, onCheckedTodo, onUpdateTodo }) => {
 
   return (
     <Card className="todo">
-      TODO List !
+      할일
       <TodoList
         filterTodoList={filterTodoList}
         onDeleteTodo={onDeleteTodo}

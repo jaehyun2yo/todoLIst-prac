@@ -1,5 +1,5 @@
 .new-todo {
-  background-color: #b3d3f9;
+  background-color: #8a2b06;
   padding: 1rem;
   margin: 2rem auto;
   width: 50rem;
@@ -15,17 +15,16 @@
   padding: 0.8rem 1.4rem;
   border: 1px solid #ffff;
   background-color: #ffff;
-  color: #64a8ff;
+  color: #8a2b06;
   border-radius: 12px;
   margin-right: 1rem;
 }
 
 .new-todo button:hover,
 .new-todo button:active {
-  background-color: #90c2ff;
-  border-color: #fff;
+  background-color: #87442a;
+  border-color: #87442a;
   color: #fff;
-  opacity: .7;
 }
 
 .new-todo button.alternative {

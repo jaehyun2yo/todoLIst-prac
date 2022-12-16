@@ -16,33 +16,35 @@ export const TodoItem = ({
   // 네비게이터 명시
   const navigate = useNavigate();
 
-  // 뒤로가기
-  // const goBack = () => {
-  //   navigate(-1);
-  // };
-
   // 상세페이지로 이동
   const goTodoDetail = () => {
+    if (todo.edited) {
+      return;
+    }
     console.log("눌렀다");
     navigate(`/todo/${todo.id}`);
   };
 
   //todo 삭제
-  const todoRemoveHandler = () => {
+  const todoRemoveHandler = (e) => {
+    e.stopPropagation();
     if (window.confirm(" 삭제 하시겠습니까? ")) {
       onDeleteTodo(todo.id);
     }
   };
 
   //todo 체크
-  const todoCheckedHandler = () => {
+  const todoCheckedHandler = (e) => {
+    e.stopPropagation();
     onCheckedTodo(todo.id);
   };
 
-  const todoUpdateHandler = () => {
+  const todoUpdateHandler = (e) => {
+    e.stopPropagation();
     onUpdateTodo(todo.id, updateContent);
   };
   const contentChangeHandler = (e) => {
+    e.stopPropagation();
     setUpdateContent(e.target.value);
   };
 
@@ -56,6 +58,7 @@ export const TodoItem = ({
                 type="text"
                 value={updateContent}
                 onChange={contentChangeHandler}
+                onClick={(e) => e.stopPropagation()}
               />
             ) : (
               <h2 className={todo.checked ? "checked" : " "}>{todo.content}</h2>
